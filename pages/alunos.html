@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Dashboard</title>
+    <title>my Dashboard</title>
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="../assets/css/fontawesome-free.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
-    <link href="../assets/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Meu Css -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/toastr.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!--#region Navbar-->
-        <!-- Navbar -->
+
+        <!--#region Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
@@ -143,10 +146,9 @@
                 </li>
             </ul>
         </nav>
-        <!--#endregion-->
+        <!-- #endregion /.navbar -->
 
-        <!--#region Main Sidebar Container-->
-        <!-- Main Sidebar Container -->
+        <!-- #region Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
@@ -172,7 +174,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+                     with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -212,8 +214,7 @@
             <!-- /.sidebar -->
         </aside>
         <!--#endregion-->
-
-        <!--#region Conteudo da pagina -->
+        <!-- #region Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
@@ -251,41 +252,41 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form id="adicionaAluno">
+                                    <form id="formAdicionarAluno">
                                         <div class="row">
 
                                             <div class="col-sm-12 col-md-4 col-lg-5">
                                                 <div class="form-group">
-                                                    <label>Nome do aluno</label>
-                                                    <input id="nomeAluno" type="text" class="form-control " required>
+                                                    <labe for="nomeAluno">Nome do aluno</labe>
+                                                    <input id="nomeAluno" type="text" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-2 col-lg-1">
                                                 <div class="form-group">
-                                                    <label>1º Bim</label>
-                                                    <input id="primeiroBim" type="number" class="form-control" required>
+                                                    <labe for="primeiroBi">1º Bim</labe>
+                                                    <input id="primeiroBi" type="number" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-2 col-lg-1">
                                                 <div class="form-group">
-                                                    <label>2º Bim</label>
-                                                    <input id="segundoBim" type="number" class="form-control" required>
+                                                    <labe for="segundoBi">2º Bim</labe>
+                                                    <input id="segundoBi" type="number" class="form-control" required>
+                                                </div>
+                                            </div>
+                                           <div class="col-sm-12 col-md-2 col-lg-1">
+                                                <div class="form-group">
+                                                    <labe for="terceiroBi">3º Bim</labe>
+                                                    <input id="terceiroBi" type="number" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-2 col-lg-1">
                                                 <div class="form-group">
-                                                    <label>3º Bim</label>
-                                                    <input id="terceiroBim" type="number" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-2 col-lg-1">
-                                                <div class="form-group">
-                                                    <label>4º Bim</label>
-                                                    <input id="quartoBim" type="number" class="form-control" required>
+                                                    <labe for="quartoBi">4º Bim</labe>
+                                                    <input id="quartoBi" type="number" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-3 col-lg-3">
-                                                <div class="form-group pt-30">
+                                                <div class="form-group pt-25">
                                                     <button type="button" class="btn btn-primary"
                                                         onclick="adicionarAluno()">
                                                         <i class="fas fa-plus"></i> Adicionar
@@ -294,49 +295,64 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="card-body table-responsive p-0">
-                                            <table id="listagemAlunos" class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Aluno</th>
-                                                        <th>1Bim</th>
-                                                        <th>2Bim</th>
-                                                        <th>3Bim</th>
-                                                        <th>4Bim</th>
-                                                        <th>Total</th>
-                                                        <th>Média</th>
-                                                        <th>Situação</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card-body table-responsive p-0">
+                                                <table id="listagemAlunos" class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Aluno</th>
+                                                            <th>1Bim</th>
+                                                            <th>2Bim</th>
+                                                            <th>3Bim</th>
+                                                            <th>4Bim</th>
+                                                            <th>Total</th>
+                                                            <th>Média</th>
+                                                            <th>Situação</th>
+                                                            <th>Ações</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- /.card-body -->
                             </div>
-                            <!-- /.card-body -->
                         </div>
+
                     </div>
+                    <div class="row"></div>
                 </div>
-                <div class="row">
-
-                </div>
-
-            </div><!-- /.container-fluid -->
+            </div>
         </div>
-        <!-- /.content -->
+        <!-- #endregion /.content-wrapper -->
+
+        <!-- #region Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- #endregion /.control-sidebar -->
+
+        <!-- #region Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Anything you want
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+            reserved.
+        </footer>
+        <!--#endregion -->
     </div>
-    <!--#endregion-->
 
 
-    <!--#region Scripts-->
-    <!-- REQUIRED SCRIPTS -->
+    <!--#region Scripts Requeridos -->
 
     <!-- jQuery -->
     <script src="../assets/js/jquery.min.js"></script>
@@ -344,6 +360,8 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../assets/js/adminlte.min.js"></script>
+    <script src="../assets/js/jquery.validate.js"></script>
+    <script src="../assets/js/toastr.min.js"></script>
     <script src="../assets/js/alunos.js"></script>
     <!--#endregion-->
 </body>
